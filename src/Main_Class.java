@@ -42,6 +42,8 @@ public class Main_Class {
             ArrayList<Integer> list_MTR = new ArrayList<>(list_first);
             ArrayList<Integer> list_MT = new ArrayList<>(list_first);
 
+            System.out.println("1");
+
 
             // writing values to the unsorted file
             for (Integer integer : list_first) {
@@ -49,9 +51,13 @@ public class Main_Class {
             }
 
             FIRST_ELEMENT = QuickSorter.timesQuickSort(list_first, QuickSorter.PivotStrategy.FIRST_ELEMENT);
+            System.out.println("2");
             RANDOM_ELEMENT = QuickSorter.timesQuickSort(list_random, QuickSorter.PivotStrategy.RANDOM_ELEMENT);
+            System.out.println("3");
             MEDIAN_OF_THREE_RANDOM_ELEMENTS = QuickSorter.timesQuickSort(list_MTR, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_RANDOM_ELEMENTS);
+            System.out.println("4");
             MEDIAN_OF_THREE_ELEMENTS = QuickSorter.timesQuickSort(list_MT, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_ELEMENTS);
+            System.out.println("5");
 
             sorted.write("Choosing first element as the pivot \n");
             for (Integer integer : list_first) {

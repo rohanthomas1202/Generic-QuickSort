@@ -122,7 +122,7 @@ public class QuickSorter<E> {
             // un-sorting the values in the ArrayList
             Collections.shuffle(random_unsorted);
             Collections.shuffle(random_unsorted);
-            System.out.println("Time taken is " + (System.nanoTime() - initial_time));
+            //System.out.println("Time taken is " + (System.nanoTime() - initial_time));
             // returning the un-sorted value
             return random_unsorted;
         } else {
