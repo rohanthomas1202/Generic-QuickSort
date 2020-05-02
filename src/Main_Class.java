@@ -53,9 +53,24 @@ public class Main_Class {
             MEDIAN_OF_THREE_RANDOM_ELEMENTS = QuickSorter.timesQuickSort(list_MTR, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_RANDOM_ELEMENTS);
             MEDIAN_OF_THREE_ELEMENTS = QuickSorter.timesQuickSort(list_MT, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_ELEMENTS);
 
+            sorted.write("Choosing first element as the pivot \n");
             for (Integer integer : list_first) {
                 sorted.write(integer + " ");
             }
+
+            sorted.write("\nChoosing a random element as the pivot \n");
+            for (Integer integer : list_random) {
+                sorted.write(integer + " ");
+            }
+            sorted.write("\nChoosing median of three random elements as the pivot \n");
+            for (Integer integer : list_MTR) {
+                sorted.write(integer + " ");
+            }
+            sorted.write("\nChoosing median of the first middle and last elements as the pivot \n");
+            for (Integer integer : list_MT) {
+                sorted.write(integer + " ");
+            }
+
 
 
 
