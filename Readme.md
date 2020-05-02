@@ -1,1 +1,1 @@
- 
+Implementing quick sort algorithm for an arraylist of integers.
