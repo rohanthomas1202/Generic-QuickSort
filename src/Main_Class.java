@@ -9,6 +9,9 @@ public class Main_Class {
 
         try {
             int size = Integer.decode(args[0]);
+            ArrayList<Integer> list_first;
+
+
             Duration FIRST_ELEMENT, RANDOM_ELEMENT, MEDIAN_OF_THREE_RANDOM_ELEMENTS, MEDIAN_OF_THREE_ELEMENTS;
 
             String report_file_name = args[1];
@@ -31,22 +34,26 @@ public class Main_Class {
                 sorted_file.createNewFile();
             FileWriter sorted = new FileWriter(sorted_file);
 
-            ArrayList<Integer> list;
 
-            list = QuickSorter.generateRandom(size);
+            list_first = QuickSorter.generateRandom(size);
+            // making four copies
+
+            ArrayList<Integer> list_random = new ArrayList<>(list_first);
+            ArrayList<Integer> list_MTR = new ArrayList<>(list_first);
+            ArrayList<Integer> list_MT = new ArrayList<>(list_first);
 
 
             // writing values to the unsorted file
-            for (Integer integer : list) {
+            for (Integer integer : list_first) {
                 unsorted.write(integer + " ");
             }
 
-            FIRST_ELEMENT = QuickSorter.timesQuickSort(list, QuickSorter.PivotStrategy.FIRST_ELEMENT);
-            RANDOM_ELEMENT = QuickSorter.timesQuickSort(list, QuickSorter.PivotStrategy.RANDOM_ELEMENT);
-            MEDIAN_OF_THREE_RANDOM_ELEMENTS = QuickSorter.timesQuickSort(list, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_RANDOM_ELEMENTS);
-            MEDIAN_OF_THREE_ELEMENTS = QuickSorter.timesQuickSort(list, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_ELEMENTS);
+            FIRST_ELEMENT = QuickSorter.timesQuickSort(list_first, QuickSorter.PivotStrategy.FIRST_ELEMENT);
+            RANDOM_ELEMENT = QuickSorter.timesQuickSort(list_random, QuickSorter.PivotStrategy.RANDOM_ELEMENT);
+            MEDIAN_OF_THREE_RANDOM_ELEMENTS = QuickSorter.timesQuickSort(list_MTR, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_RANDOM_ELEMENTS);
+            MEDIAN_OF_THREE_ELEMENTS = QuickSorter.timesQuickSort(list_MT, QuickSorter.PivotStrategy.MEDIAN_OF_THREE_ELEMENTS);
 
-            for (Integer integer : list) {
+            for (Integer integer : list_first) {
                 sorted.write(integer + " ");
             }
 
